@@ -1,0 +1,72 @@
+# ==============================
+# ⚙️ NODE / CYPRESS IGNORE FILE
+# ==============================
+
+# Node modules
+node_modules/
+
+# Cypress cache e arquivos temporários
+.cypress-cache/
+.cypress/
+.cache/
+CypressCache/
+CypressDownloads/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Relatórios e artefatos gerados automaticamente
+cypress/reports/
+mochawesome-report/
+mochawesome.json
+mochawesome.html
+*.json
+*.xml
+
+# Vídeos e screenshots gerados pelo Cypress
+cypress/videos/
+cypress/screenshots/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+
+# Arquivos do editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.*.local
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.bak
+*.log
+
+# Output de build (caso use futuramente um bundler)
+dist/
+build/
+out/
+coverage/
+
+# Arquivos do GitHub Actions temporários
+.github/workflows/*.tmp
+.github/actions/*.log
+
+# Arquivos de configuração pessoal
+*.code-workspace
+
+# ==============================
+# ✅ FIM DO .GITIGNORE
+# ==============================
