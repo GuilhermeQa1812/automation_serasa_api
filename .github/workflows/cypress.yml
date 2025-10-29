@@ -1,16 +1,13 @@
 name: 🚀 Cypress Tests
 
 on:
-  # Permite executar manualmente pelo GitHub Actions
-  workflow_dispatch:
-
-  # Executa automaticamente em cada push ou PR na branch main
-  push:
+  push:                # Executa automaticamente em cada push
+    branches:
+      - main           # (adicione outras branches se quiser)
+  pull_request:        # Executa em PRs para main
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:   # Permite rodar manualmente no GitHub Actions
 
 jobs:
   cypress-run:
@@ -29,14 +26,4 @@ jobs:
         run: npm ci
 
       - name: 🧪 Executar testes Cypress em modo headless
-        run: |
-          npx cypress run --headless \
-            --reporter mochawesome \
-            --reporter-options reportDir=cypress/reports/mochawesome-report,overwrite=false,html=true,json=true
-
-      - name: 📁 Publicar relatório Mochawesome
-        if: always() # Mesmo que os testes falhem, faz upload do relatório
-        uses: actions/upload-artifact@v4
-        with:
-          name: mochawesome-report
-          path: cypress/reports/mochawesome-report/
+        run: npx cypress run --headless
